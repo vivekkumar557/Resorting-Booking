@@ -1,0 +1,25 @@
+<% layout('layout/boilerplate.ejs') -%>
+<h1>Wishlists</h1>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for(let wishlists of allwishlist){ %>
+            <a href="/listings/<%=wishlists._id%>" style="text-decoration: none">
+                <div class="card col listing-card">
+                    <img src="<%=wishlists.image.url %>" class="card-img-top" alt="..." style="height: 21rem" />
+                    
+
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%= wishlists.title %>
+                            </b>
+                            <br />
+                            &#8377;<%= wishlists.price %> / night<i class="tax-info">&nbsp; &nbsp;+18% GST</i>
+                                <br />
+                                Contact No. - <%= wishlists.phone %>
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <% } %>
+    </div>
